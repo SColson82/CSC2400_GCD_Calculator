@@ -21,5 +21,12 @@ int main(int argc, char *argv[])
         num1 = num2;
         num2 = temp;
     }
+
+    cout << "Input received: " << num1 << ", " << num2 << endl;
+    cout << "gcd(" << num1 << "," << num2 << ") = "
+         << "v" << endl;
+    euclidgcd(num1, num2);
+    consecutiveIntegerCheckingGCD(num1, num2);
+    middleSchoolMethodGCD(num1, num2);
     return 0;
 }

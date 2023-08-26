@@ -16,5 +16,8 @@ using namespace std;
       Precondition:  None.
       Postcondition: Bank with empty array has been constructed.
      -----------------------------------------------------------------------*/
+void euclidgcd(int a, int b);
+void consecutiveIntegerCheckingGCD(int a, int b);
+void middleSchoolMethodGCD(int a, int b);
 
 #endif
