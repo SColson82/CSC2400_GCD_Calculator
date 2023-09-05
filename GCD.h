@@ -22,7 +22,16 @@ using namespace std;
       calculated coefficients x and y. 
      -----------------------------------------------------------------------*/
 int extended_euclidgcd(int a, int b,int &x, int &y);
-void consecutiveIntegerCheckingGCD(int a, int b);
+
+/*------------------------------------------------------------------------
+      Calculates the greatest common denominator of two integers by checking
+      all integer values from one to the minimum of the outputs. 
+
+      Precondition:  two integers which are the input from the user. 
+      Postcondition: One integer, the greatest common denominator for the two 
+      input values. 
+     -----------------------------------------------------------------------*/
+int consecutiveIntegerCheckingGCD(int a, int b);
 void middleSchoolMethodGCD(int a, int b);
 
 #endif

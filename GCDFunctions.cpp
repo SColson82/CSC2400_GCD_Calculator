@@ -26,9 +26,25 @@ int extended_euclidgcd(int a, int b, int &x, int &y)
     return gcd;
 };
 
-void consecutiveIntegerCheckingGCD(int a, int b)
-{
-    cout << "Consecutive Integer Method: " << a << ", " << b <<endl;
+int consecutiveIntegerCheckingGCD(int a, int b)
+{   
+    // b will always be the min value because the inputs have been 
+    // compared before feeding them to the algorithms. 
+    int t = b;
+    int gcd = 1;
+
+    // Check every integer from one to b
+    for (int i = 1; i <= t; i++)
+    {
+        // If that integer is a divisor for both a and b
+        if (a % i == 0 && b % i == 0)
+        {
+            // Save that value
+            gcd = i;
+        }
+    }
+    // Return the calculated gcd. 
+    return gcd;
 };
 
 void middleSchoolMethodGCD(int a, int b)

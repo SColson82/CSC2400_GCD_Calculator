@@ -20,35 +20,64 @@ int main(int argc, char *argv[])
     int x(1), y(0);
 
     // GCD naturally reorders the user's input
-    // however, reordering before feeding to the 
-    // gcd functions causes the x and y variables 
-    // to be ordered in a more logical fashion. 
+    // however, reordering before feeding to the
+    // gcd functions causes the x and y variables
+    // to be ordered in a more logical fashion.
     if (n > m)
     {
         int temp = m;
         m = n;
         n = temp;
     }
+    // Once reodered, check that n is not equal
+    while (n == 0)
+    {
+        cout << "Undefined: no GCD exists while the divisor equals 0. <br> Please choose again. " << endl;
+        cout << "m = " << m << endl;
+        cout << "n = ";
+        cin >> n;
+        if (n > m)
+        {
+            int temp = m;
+            m = n;
+            n = temp;
+        }
+    }
 
     // Restate the user's input
-    cout << endl << endl;
+    cout << endl
+         << endl;
     cout << "Input received: " << m << ", " << n << endl;
     cout << endl;
     cout << "=============================" << endl;
 
     // Part 1: extended Euclid's Algorithm
     int eegcd = extended_euclidgcd(m, n, x, y);
-    cout << "Extended Euclid Algorithm:" << endl;
-    cout << "Finds the greatest common denominators for 2 integers," << endl; 
-    cout << "a and b, and provides x and y such that ax + by = gcd(a,b). " << endl << endl;
+    cout << "Extended Euclid Algorithm:" << endl << endl;
+    cout << "Finds the greatest common denominators for 2 integers," << endl;
+    cout << "a and b, and provides x and y such that ax + by = gcd(a,b). " << endl
+         << endl;
     cout << "gcd(" << m << ", " << n << ") = " << eegcd << endl;
     cout << "a = " << m << ", b = " << n << endl;
-    cout << "x = " << x << ", y = " << y << endl << endl;
-    cout <<  m << "(" << x << ")" << " + " << n <<"(" << y <<") = " << eegcd << endl;
-    cout << "=============================" << endl << endl;
-    
-    
-    consecutiveIntegerCheckingGCD(m, n);
+    cout << "x = " << x << ", y = " << y << endl
+         << endl;
+    cout << m << "(" << x << ")"
+         << " + " << n << "(" << y << ") = " << eegcd << endl;
+    cout << "=============================" << endl
+         << endl;
+
+    cout << "=============================" << endl;
+
+    // Part 2: Consecutive Integer Checking
+    int cicgcd = consecutiveIntegerCheckingGCD(m, n);
+    cout << "Consecutive Integer Checking Algorithm:" << endl << endl;
+    cout << "Finds the greatest common denominators for 2 integers, a and b," << endl;
+    cout << "by checking every integer from one to the smaller input. " << endl
+         << endl;
+    cout << "gcd(" << m << ", " << n << ") = " << cicgcd << endl;
+    cout << "=============================" << endl
+         << endl;
+
     middleSchoolMethodGCD(m, n);
     return 0;
 }
