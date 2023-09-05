@@ -47,7 +47,102 @@ int consecutiveIntegerCheckingGCD(int a, int b)
     return gcd;
 };
 
-void middleSchoolMethodGCD(int a, int b)
+int middleSchoolMethodGCD(int a, int b)
 {
-cout << "Middle-school Method: " << a << ", " << b <<endl;
+    // Prime Factors of m
+    vector<int> factors_a = factor(a);
+
+    // Prime Factors of n
+    vector<int> factors_b = factor(b);
+
+    // Common Elements of the 2 Prime Factor vectors
+    vector<int> factors_common = commonElements(factors_a, factors_b);
+
+    // Greatest Common Divisor (multiply all of the elements of the Common Elements vector.)
+    int gcd = GCD(factors_common);
+
+    return gcd;
+};
+
+
+vector<int> factor(int num)
+{   
+    // Every integer can be divided by itself and one. 
+    // We set t = 2 to begin the check for prime factors. 
+    int t = 2;
+
+    // Create a vector to hold any prime factors. 
+    vector<int> factors;
+
+    while (num > 1)
+    {
+        // Check for prime. 
+        if (num % t == 0)
+        {
+            // Add the factor to the vector.
+            factors.push_back(t);
+            // Reduce the input. 
+            num = num/t;
+        }
+        else
+        {
+            // Move to the next integer. 
+            t += 1;
+        }
+    }
+    // Return the assembled vector.
+    return factors;
+};
+
+vector<int> commonElements(const vector<int>vector1, const vector<int>vector2)
+{   
+    // Create vector to the common elements. 
+    vector<int> C;
+    // Set the index for the first vector.
+    int i = 0;
+    // Set the index for the second vector. 
+    int j = 0;
+
+    // While we haven't gotten to the end of one of the vectors...
+    while (i < vector1.size() && j < vector2.size())
+    {
+        // If the values in each vector are the same:
+        if (vector1[i] == vector2[j])
+        {
+            // Add them to the common elements vector,
+            C.push_back(vector1[i]);
+            // Move to the next value in vector 1,
+            i++;
+            // And move to the next value in vector 2.
+            j++;
+        }
+        // If the value in vector 1 is less than that of vector 2. 
+        else if (vector1[i] < vector2[j])
+        {
+            // Move to the next value in vector 1.
+            i++;
+        }
+        else
+        {
+            // Otherwise move to the next value in vector 2.
+            j++;
+        }
+    }
+    // Return the vector of common elements. 
+    return C;
+};
+
+int GCD(const vector<int> &commonFactors)
+{   
+    // Default the gcd to 1.
+    int gcd = 1;
+
+    // Loop over every element in the commonFactors vector.
+    for (int element : commonFactors)
+    {
+        // Find the product of all. 
+        gcd *= element;
+    }
+    // Return the calculated product. 
+    return gcd;
 };

@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
          << endl;
     cout << "Input received: " << m << ", " << n << endl;
     cout << endl;
-    cout << "=============================" << endl;
+    cout << "=============================" << endl << endl;
 
     // Part 1: extended Euclid's Algorithm
     int eegcd = extended_euclidgcd(m, n, x, y);
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
     cout << "=============================" << endl
          << endl;
 
-    cout << "=============================" << endl;
+    //cout << "=============================" << endl;
 
     // Part 2: Consecutive Integer Checking
     int cicgcd = consecutiveIntegerCheckingGCD(m, n);
@@ -78,6 +78,16 @@ int main(int argc, char *argv[])
     cout << "=============================" << endl
          << endl;
 
-    middleSchoolMethodGCD(m, n);
+    // Part 3: Middle School Method
+    //cout << "=============================" << endl;
+    int msmgcd = middleSchoolMethodGCD(m, n);
+    cout << "Middle School Method Algorithm:" << endl << endl;
+    cout << "Finds the greatest common denominators for 2 integers, a and b," << endl;
+    cout << "by finding the prime factors of each input and then combining the" << endl;
+    cout << "common factors via multiplication. " << endl
+         << endl;
+    cout << "gcd(" << m << ", " << n << ") = " << msmgcd << endl;
+    cout << "=============================" << endl
+         << endl;   
     return 0;
 }

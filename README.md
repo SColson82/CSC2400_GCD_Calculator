@@ -10,9 +10,10 @@ The extended Euclid’s algorithm determines not only the greatest common diviso
  
 
 ## Part II: Consecutive Integer Checking Algorithm
-The Consecutive Integer Checking Algorithm calculates the greatest common denominator by dividing both inputs from the user by every integer between one and the minimon of the two inputs. 
+The Consecutive Integer Checking Algorithm calculates the greatest common divisor by dividing both inputs from the user by every integer between one and the minimum of the two inputs. 
 
 ## Part III: Middle-school Implementation
+The Middle School Method algorithm calculates the greatest common divisor by utilizing the method most students learned in middle school. Each input is factored and prime factors are placed in separate vectors each input. The two resulting vectors are compared, creating a third vector of the common elements of each of the input vectors. The product of the elements of the third vector is then calculated, resulting in the greatest common divisor for both input integers. 
 
 ## How to utilize this program.
 
