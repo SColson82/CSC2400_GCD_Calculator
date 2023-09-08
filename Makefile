@@ -5,3 +5,11 @@
 #  *    Purpose:    Calculate Greatest Common Divisor * 
 #  *                Using Various Algorithms          *
 #  ****************************************************/
+
+all: gcd
+
+gcd: GCDFunctions.cpp GCDDriver.cpp GCD.h
+	g++ -Wall -o gcd GCDFunctions.cpp GCDDriver.cpp
+
+clean:
+	rm -f gcd
