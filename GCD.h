@@ -22,7 +22,7 @@ using namespace std;
       Postcondition: Three integers, the gcd of the user's input and the 
       calculated coefficients x and y. 
      -----------------------------------------------------------------------*/
-int extended_euclidgcd(int a, int b,int &x, int &y);
+int extendedEuclidGCD(int a, int b,int &x, int &y);
 
 /*------------------------------------------------------------------------
       Calculates the greatest common denominator of two integers by checking
