@@ -6,6 +6,8 @@
 #  *                Using Various Algorithms          *
 #  ****************************************************/
 
+# This file is in progress and is not currently deployable. 
+
 all: gcd
 
 gcd: GCDFunctions.cpp GCDDriver.cpp GCD.h
