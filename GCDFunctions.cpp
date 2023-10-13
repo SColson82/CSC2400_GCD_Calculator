@@ -56,6 +56,18 @@ int consecutiveIntegerCheckingGCD(int a, int b)
 
 int middleSchoolMethodGCD(int a, int b)
 {
+    if (b > a)
+    {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
+    // exit case, the input is in its reduced form.
+    if (b == 0)
+    {
+        return a;
+    }
+
     // Prime Factors of m
     vector<int> factors_a = factor(a);
 
