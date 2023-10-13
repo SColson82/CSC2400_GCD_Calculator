@@ -23,27 +23,28 @@ int main(int argc, char *argv[])
      // however, reordering before feeding to the
      // gcd functions causes the x and y variables
      // to be ordered in a more logical fashion.
-     if (n > m)
-     {
-          int temp = m;
-          m = n;
-          n = temp;
-     }
+     // if (n > m)
+     // {
+     //      int temp = m;
+     //      m = n;
+     //      n = temp;
+     // }
      // Once reodered, check that n is not equal
-     while (n == 0)
+     while (n == 0 && m==0)
      {
           cout << "Undefined: no GCD exists while the divisor equals 0. \n"
                << "Please choose again. " << endl;
-          cout << "m = " << m 
-               << endl;
+          cout << "m = ";
+          cin >> m;
+          cout << endl;
           cout << "n = ";
           cin >> n;
-          if (n > m)
-          {
-               int temp = m;
-               m = n;
-               n = temp;
-          }
+          // if (n > m)
+          // {
+          //      int temp = m;
+          //      m = n;
+          //      n = temp;
+          // }
      }
 
      // Restate the user's input
