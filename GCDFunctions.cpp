@@ -14,8 +14,15 @@ int extendedEuclidGCD(int a, int b, int &x, int &y)
     {
         x = 1;
         y = 0;
-        return a;
+        if (a>= 0){
+            return a;
+        }
+        else {
+            x = -x;
+            return -a;
+        }
     }
+
 
     // Recursively calls the algorithm until the exit
     // condition has been found.
@@ -29,6 +36,8 @@ int extendedEuclidGCD(int a, int b, int &x, int &y)
 
 int consecutiveIntegerCheckingGCD(int a, int b)
 {
+    a = abs(a);
+    b = abs(b);
     // b will always be the min value because the inputs have been
     // compared before feeding them to the algorithms.
     if (b > a)
@@ -56,6 +65,9 @@ int consecutiveIntegerCheckingGCD(int a, int b)
 
 int middleSchoolMethodGCD(int a, int b)
 {
+    a = abs(a);
+    b = abs(b);
+
     if (b > a)
     {
         int temp = a;
