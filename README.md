@@ -23,7 +23,7 @@ The Middle School Method algorithm calculates the greatest common divisor by uti
 
 - Input the executable name and two integers.
 
-> ```gcd.exe 254 32```
+> ```./gcd.exe 254 32```
 
 * Output - the result obtained using the three algorithms listed above.
 * Displays - algorithm(m,n)=v where m and n are the inputs and v is the calculated gcd
