@@ -18,18 +18,8 @@ int main(int argc, char *argv[])
      int n = atoi(argv[2]);
      // Declare additional variables
      int x(1), y(0);
-
-     // GCD naturally reorders the user's input
-     // however, reordering before feeding to the
-     // gcd functions causes the x and y variables
-     // to be ordered in a more logical fashion.
-     // if (n > m)
-     // {
-     //      int temp = m;
-     //      m = n;
-     //      n = temp;
-     // }
-     // Once reodered, check that n is not equal
+     
+     // Check that the inputs are not both zero.
      while (n == 0 && m==0)
      {
           cout << "Undefined: no GCD exists while the divisor equals 0. \n"
@@ -39,12 +29,6 @@ int main(int argc, char *argv[])
           cout << endl;
           cout << "n = ";
           cin >> n;
-          // if (n > m)
-          // {
-          //      int temp = m;
-          //      m = n;
-          //      n = temp;
-          // }
      }
 
      // Restate the user's input

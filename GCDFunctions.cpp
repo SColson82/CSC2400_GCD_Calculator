@@ -9,11 +9,12 @@
 
 int extendedEuclidGCD(int a, int b, int &x, int &y)
 {
-    // exit case, the input is in its reduced form.
+    // Exit case, the input is in its reduced form.
     if (b == 0)
     {
         x = 1;
         y = 0;
+        // Account for negative input.
         if (a>= 0){
             return a;
         }
@@ -24,7 +25,7 @@ int extendedEuclidGCD(int a, int b, int &x, int &y)
     }
 
 
-    // Recursively calls the algorithm until the exit
+    // Recursively call the algorithm until the exit
     // condition has been found.
     int xi(0), yi(0);
     int gcd = extendedEuclidGCD(b, a % b, xi, yi);
@@ -36,16 +37,11 @@ int extendedEuclidGCD(int a, int b, int &x, int &y)
 
 int consecutiveIntegerCheckingGCD(int a, int b)
 {
+    // Adjust for negative input.
     a = abs(a);
     b = abs(b);
-    // b will always be the min value because the inputs have been
-    // compared before feeding them to the algorithms.
-    if (b > a)
-    {
-        int temp = a;
-        a = b;
-        b = temp;
-    }
+
+    // Set initial run case. 
     int t = b;
     int gcd = a;
 
@@ -65,16 +61,18 @@ int consecutiveIntegerCheckingGCD(int a, int b)
 
 int middleSchoolMethodGCD(int a, int b)
 {
+    // Account for negative integers.
     a = abs(a);
     b = abs(b);
 
+    // Swap input positions if n > m. 
     if (b > a)
     {
         int temp = a;
         a = b;
         b = temp;
     }
-    // exit case, the input is in its reduced form.
+    // Exit case, the input is in its reduced form.
     if (b == 0)
     {
         return a;
